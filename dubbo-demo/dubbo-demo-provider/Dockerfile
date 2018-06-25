@@ -1,5 +1,5 @@
 FROM docker.io/busybox:latest 
- COPY /home/jenkins/workspace/dubbo-old/dubbo-demo/dubbo-demo-provider/target/dubbo-demo-consumer-2.5.7-assembly.tar.gz /
+ COPY /home/jenkins/workspace/dubbo-old/dubbo-demo/dubbo-demo-provider/target/dubbo-demo-provider-2.5.7-assembly.tar.gz /
  RUN tar xvf dubbo-demo-provider-2.5.7-assembly.tar.gz 
  RUN mkdir app 
 RUN cp -rf dubbo-demo-provider-2.5.7/bin/ /app 
