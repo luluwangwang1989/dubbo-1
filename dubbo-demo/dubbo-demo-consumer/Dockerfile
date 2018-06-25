@@ -1,6 +1,10 @@
-FROM openjdk:8-jre
-
-ADD target/dubbo-demo-consumer-2.5.7-assembly.tar.gz /dubbo
-COPY start-docker.sh /dubbo/dubbo-demo-consumer-2.5.7/bin/
-
-CMD ["sh","-c","/dubbo/dubbo-demo-consumer-2.5.7/bin/start-docker.sh"]
+FROM docker.io/busybox:latest 
+ COPY ./app / 
+ RUN tar xvf dubbo-demo-consumer-2.5.7-assembly.tar.gz 
+ RUN mkdir app 
+RUN cp -rf dubbo-demo-consumer-2.5.7/bin/ /app 
+RUN cp -rf dubbo-demo-consumer-2.5.7/lib/ /app 
+RUN cp -rf dubbo-demo-consumer-2.5.7/conf/ /app 
+RUN cp -rf start-docker.sh /app/bin 
+RUN chmod -R 777 /app/bin/start-docker.sh 
+CMD "tail" "-f" "/dev/null"
