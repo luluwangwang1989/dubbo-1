@@ -1,4 +1,3 @@
-bash-4.2$ cat Dockerfile 
 FROM docker.io/busybox:latest 
  ADD target/dubbo-demo-consumer-2.5.7-assembly.tar.gz /
  RUN mkdir app 
